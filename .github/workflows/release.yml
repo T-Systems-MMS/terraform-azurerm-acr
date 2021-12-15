@@ -45,10 +45,6 @@ jobs:
           working-dir: .
           output-file: README.md
           output-method: inject
-          anchor: false
-          hide-empty: true
-          read-comments: true
-          sort-by: required
 
       - name: push changelog and readme
         uses: github-actions-x/commit@v2.6
