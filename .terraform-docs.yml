@@ -41,3 +41,4 @@ settings:
   escape: false
   required: true
   type: true
+  read-comments: true
