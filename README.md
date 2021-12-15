@@ -1,29 +1,36 @@
-# README
+# acr
 
-## Azure
+This module manages the Azure Container Registry
 
-### Requirements
+## Requirements
 
-### Installation
+| Name | Version |
+|------|---------|
+| azurerm | >=2.19.0 |
 
-`main.tf`
+## Providers
 
-```terraform
-module "acr" {
-  source = "git::https://git.mms-support.de/shared/terraform/azure/terraform-acr.git?ref=0.0.1"
-}
-```
+| Name | Version |
+|------|---------|
+| azurerm | >=2.19.0 |
 
-`shell`
+## Resources
 
-```bash
-terraform init
-```
+| Name | Type |
+|------|------|
+| [azurerm_container_registry.acr](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry) | resource |
 
-### Usage
+## Inputs
 
-`main.tf`
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| location | location where the resource should be created | `string` | n/a | yes |
+| resource_name | Azure Container Registry | `set(string)` | n/a | yes |
+| acr | Azure Container Registry Arguments, defaults defined under local.default.acr | `any` | `{}` | no |
+| tags | mapping of tags to assign, defaults defined under local.default.tags | `any` | `{}` | no |
 
-### Contributing
+## Outputs
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+| Name | Description |
+|------|-------------|
+| container_registry | azurerm_container_registry results |

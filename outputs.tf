@@ -1,5 +1,5 @@
 output "container_registry" {
-  description = "azurerm_container_registry"
+  description = "azurerm_container_registry results"
   value = {
     for registry in keys(azurerm_container_registry.acr) :
     registry => {

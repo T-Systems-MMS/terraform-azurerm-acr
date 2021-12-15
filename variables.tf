@@ -1,26 +1,24 @@
-# resource definition
 variable "resource_name" {
-  type    = set(string)
-  default = ["acr"]
+  type        = set(string)
+  description = "Azure Container Registry"
 }
 variable "location" {
-  type = string
+  type        = string
+  description = "location where the resource should be created"
 }
 variable "tags" {
-  type    = any
-  default = {}
+  type        = any
+  default     = {}
+  description = "mapping of tags to assign, defaults defined under local.default.tags"
 }
 variable "acr" {
-  type    = any
-  default = {}
+  type        = any
+  default     = {}
+  description = "Azure Container Registry Arguments, defaults defined under local.default.acr"
 }
 
 locals {
-  # type constraints
-
-  # default values
   default = {
-    # resource definition
     tags = {}
     acr = {
       sku           = "Basic"
@@ -28,7 +26,7 @@ locals {
     }
   }
 
-  # merge custom and default values
+  # merge default and custom variables
   tags = merge(local.default.tags, var.tags)
   acr  = merge(local.default.acr, var.acr)
 }
