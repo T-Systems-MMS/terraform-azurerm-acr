@@ -9,12 +9,12 @@ variable "location" {
 variable "tags" {
   type        = any
   default     = {}
-  description = "mapping of tags to assign, defaults defined under local.default.tags"
+  description = "mapping of tags to assign, default settings are defined within locals and merged with var settings"
 }
 variable "acr" {
   type        = any
   default     = {}
-  description = "Azure Container Registry Arguments, defaults defined under local.default.acr"
+  description = "Azure Container Registry Arguments, default settings are defined within locals and merged with var settings"
 }
 
 locals {

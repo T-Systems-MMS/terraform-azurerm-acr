@@ -1,0 +1,43 @@
+formatter: template
+
+sections:
+  show:
+    - header
+    - requirements
+    - providers
+    - resources
+    - modules
+    - inputs
+    - outputs
+    - footer
+
+content: |-
+  {{ .Header }}
+
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
+
+  ## Examples
+
+  ```hcl
+  {{ include "examples/main.tf" }}
+  ```
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  indent: 2
+  hide-empty: true
+  anchor: false
+  escape: false
+  required: true
+  type: true

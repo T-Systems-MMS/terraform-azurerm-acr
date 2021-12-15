@@ -1,8 +1,10 @@
 /**
  * # acr
  *
- * This module manages the Azure Container Registry
+ * This module manages the Azure Container Registry.
+ *
 */
+
 
 resource "azurerm_container_registry" "acr" {
   for_each = var.resource_name
