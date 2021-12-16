@@ -30,14 +30,6 @@ jobs:
 
       - name: Generate changelog
         uses: charmixer/auto-changelog-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          future_release: ${{ steps.version.outputs.next-version }}
-          # this excludes all versions prior to the collection-release
-          # since they break the changelog generation with the error:
-          # "No common ancestor between ... and $version"
-          exclude_tags_regex: '[0-6]\.\d\.\d'
-          issue_line_labels: mysql_hardening,os_hardening,ssh_hardening,nginx_hardening
 
       - name: Generate readme
         uses: terraform-docs/gh-actions@main
@@ -54,8 +46,8 @@ jobs:
           commit-message: 'update changelog'
           force-add: 'true'
           files: CHANGELOG.md README.md
-          name: dev-sec CI
-          email: hello@dev-sec.io
+          name: T-Systems MMS
+          email: frage@t-systems-mms.com
 
       # do a second checkout to prevent race situation
       # changelog gets updated but action works on old commit id
