@@ -30,6 +30,9 @@ jobs:
 
       - name: Generate changelog
         uses: charmixer/auto-changelog-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          future_release: ${{ steps.version.outputs.next-version }}
 
       - name: Generate readme
         uses: terraform-docs/gh-actions@main
