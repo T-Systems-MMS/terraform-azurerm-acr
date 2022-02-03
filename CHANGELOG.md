@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.3](https://github.com/T-Systems-MMS/terraform-acr/tree/0.0.3) (2021-12-16)
+
+[Full Changelog](https://github.com/T-Systems-MMS/terraform-acr/compare/0.0.2...0.0.3)
+
+**Merged pull requests:**
+
+- fix: correct release configuration [\#3](https://github.com/T-Systems-MMS/terraform-acr/pull/3) ([michaelamattes](https://github.com/michaelamattes))
+- fix: correct filename [\#2](https://github.com/T-Systems-MMS/terraform-acr/pull/2) ([michaelamattes](https://github.com/michaelamattes))
+
 ## [0.0.2](https://github.com/T-Systems-MMS/terraform-acr/tree/0.0.2) (2021-12-15)
 
 [Full Changelog](https://github.com/T-Systems-MMS/terraform-acr/compare/0.0.1...0.0.2)

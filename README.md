@@ -83,10 +83,7 @@ This module manages the Azure Container Registry.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| location | location where the resource should be created | `string` | n/a | yes |
-| resource_name | Azure Container Registry | `set(string)` | n/a | yes |
-| acr | Azure Container Registry Arguments, default settings are defined within locals and merged with var settings | `any` | `{}` | no |
-| tags | mapping of tags to assign, default settings are defined within locals and merged with var settings | `any` | `{}` | no |
+| acr | resource definition, default settings are defined within locals and merged with var settings | `any` | `{}` | no |
 
 ## Outputs
 
@@ -98,15 +95,16 @@ This module manages the Azure Container Registry.
 
 ```hcl
 module "acr" {
-  source        = "../terraform-acr"
-  location      = "westeurope"
-  resource_name = ["servicecr"]
+  source = "../terraform-acr"
   acr = {
-    resource_group_name = "resource_group_name"
-    key_vault_id        = "keyvault_id"
-  }
-  tags = {
-    service = "service_name"
+    servicecr = {
+      location            = "westeurope"
+      resource_group_name = "service-rg"
+      key_vault_id        = "keyvault_id"
+      tags = {
+        service = "service_name"
+      }
+    }
   }
 }
 ```
