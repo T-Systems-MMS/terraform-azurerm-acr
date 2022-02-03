@@ -1,12 +1,13 @@
 module "acr" {
-  source        = "../terraform-acr"
-  location      = "westeurope"
-  resource_name = ["servicecr"]
+  source = "../terraform-acr"
   acr = {
-    resource_group_name = "resource_group_name"
-    key_vault_id        = "keyvault_id"
-  }
-  tags = {
-    service = "service_name"
+    servicecr = {
+      location            = "westeurope"
+      resource_group_name = "service-rg"
+      key_vault_id        = "keyvault_id"
+      tags = {
+        service = "service_name"
+      }
+    }
   }
 }

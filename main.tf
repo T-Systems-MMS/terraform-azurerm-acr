@@ -5,20 +5,16 @@
  *
 */
 
-
 resource "azurerm_container_registry" "acr" {
-  for_each = var.resource_name
+  for_each = var.acr
 
-  name                = each.value
-  location            = var.location
-  resource_group_name = local.acr.resource_group_name
-  sku                 = local.acr.sku
-  admin_enabled       = local.acr.admin_enabled
+  name                = local.acr[each.key].name == "" ? each.key : local.acr[each.key].name
+  location            = local.acr[each.key].location
+  resource_group_name = local.acr[each.key].resource_group_name
+  sku                 = local.acr[each.key].sku
+  admin_enabled       = local.acr[each.key].admin_enabled
 
-  tags = {
-    for tag in keys(local.tags) :
-    tag => local.tags[tag]
-  }
+  tags = local.acr[each.key].tags
 
   lifecycle {
     prevent_destroy = true
