@@ -1,5 +1,5 @@
 module "acr" {
-  source = "../terraform-acr"
+  source = "../modules/azure/terraform-acr"
   acr = {
     servicecr = {
       location            = "westeurope"
