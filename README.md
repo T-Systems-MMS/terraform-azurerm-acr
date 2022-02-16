@@ -1,4 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
+
 # acr
 
 This module manages the Azure Container Registry.
@@ -7,33 +8,33 @@ This module manages the Azure Container Registry.
 
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| terraform | >=0.12 |
-| azurerm | >=2.19.0 |
+| Name      | Version  |
+| --------- | -------- |
+| terraform | >=0.12   |
+| azurerm   | >=2.19.0 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
+| Name    | Version  |
+| ------- | -------- |
 | azurerm | >=2.19.0 |
 
 ## Resources
 
-| Name | Type |
-|------|------|
+| Name                           | Type     |
+| ------------------------------ | -------- |
 | azurerm_container_registry.acr | resource |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| acr | resource definition, default settings are defined within locals and merged with var settings | `any` | `{}` | no |
+| Name | Description                                                                                  | Type  | Default | Required |
+| ---- | -------------------------------------------------------------------------------------------- | ----- | ------- | :------: |
+| acr  | resource definition, default settings are defined within locals and merged with var settings | `any` | `{}`    |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
+| Name               | Description                        |
+| ------------------ | ---------------------------------- |
 | container_registry | azurerm_container_registry results |
 
 ## Examples
@@ -53,4 +54,5 @@ module "acr" {
   }
 }
 ```
+
 <!-- END_TF_DOCS -->
