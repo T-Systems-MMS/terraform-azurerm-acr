@@ -95,7 +95,7 @@ This module manages the Azure Container Registry.
 
 ```hcl
 module "acr" {
-  source = "../modules/azure/terraform-acr"
+  source = "registry.terraform.io/T-Systems-MMS/acr/azurerm"
   acr = {
     servicecr = {
       location            = "westeurope"
