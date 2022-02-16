@@ -1,5 +1,5 @@
 module "acr" {
-  source = "../modules/azure/terraform-acr"
+  source = "registry.terraform.io/T-Systems-MMS/acr/azurerm"
   acr = {
     servicecr = {
       location            = "westeurope"
